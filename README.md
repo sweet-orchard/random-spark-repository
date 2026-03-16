@@ -97,6 +97,30 @@ npm run build
 2. Deploy to Vercel or any Next.js-compatible host.
 3. Add the same `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` env vars in your deployment environment.
 
+## Deploy to GitHub Pages
+
+This repo is configured to deploy automatically from `main` using GitHub Actions and static export.
+
+1. In GitHub, open repository settings and enable Pages:
+	- Source: `GitHub Actions`
+2. Add repository secrets:
+	- `NEXT_PUBLIC_SUPABASE_URL`
+	- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+3. Push to `main`.
+4. Wait for the `Deploy Next.js static site to GitHub Pages` workflow to complete.
+
+Your app will be available at:
+
+```text
+https://sweet-orchard.github.io/random-spark-repository/
+```
+
+Notes:
+
+- `next.config.ts` is configured with static export (`output: "export"`) and GitHub Pages base path support.
+- The workflow sets `NEXT_PUBLIC_BASE_PATH` automatically to the repository name.
+- If the repository name changes, the deployment URL path changes too.
+
 ## App summary
 
 Spin Picker is a focused productivity tool: collect tasks, group them into spin lists, and let a clean animated picker choose what you do next.

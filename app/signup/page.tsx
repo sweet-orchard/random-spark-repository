@@ -7,6 +7,7 @@ import { supabase } from "@/lib/supabaseClient";
 
 export default function SignUpPage() {
   const router = useRouter();
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -25,7 +26,7 @@ export default function SignUpPage() {
     setMessage(null);
     setLoading(true);
 
-    const emailRedirectTo = typeof window !== "undefined" ? `${window.location.origin}/login` : undefined;
+    const emailRedirectTo = typeof window !== "undefined" ? `${window.location.origin}${basePath}/login` : undefined;
     const { data, error: signUpError } = await supabase.auth.signUp({
       email: email.trim(),
       password,
