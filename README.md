@@ -63,7 +63,14 @@ http://localhost:3000
 
 ## Supabase notes
 
-The app expects a `tasks` table with row ownership through `user_id`.
+The app expects:
+- `tasks` table (task rows per user)
+- `spins` table (legacy spin metadata per user)
+- `user_state` table (full UI state sync: folders, spins, history, active selections, recents)
+
+Run the SQL in [supabase/user_state.sql](/Users/virasaienko/Documents/CODE DRAFTS/spinning choice/spin-picker/supabase/user_state.sql) to create `user_state` with RLS.
+
+For `tasks`, each row should include:
 At minimum, each row should include:
 
 - `id` (uuid)

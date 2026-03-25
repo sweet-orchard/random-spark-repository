@@ -7,6 +7,9 @@ const basePath = isGithubActions && repoName ? `/${repoName}` : "";
 const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
+  turbopack: {
+    root: process.cwd(),
+  },
   images: {
     unoptimized: true,
   },

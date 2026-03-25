@@ -4,6 +4,10 @@
 #
 name: Deploy Next.js site to Pages
 
+env:
+  NEXT_PUBLIC_SUPABASE_URL: "https://ypupvhojlhpfnqovqlmk.supabase.co"
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: "sb_publishable_oiDdwRpj2GbhpLJIuiX2DA_0qUBhbah"
+
 on:
   # Runs on pushes targeting the default branch
   push:

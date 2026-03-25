@@ -55,6 +55,7 @@ export default function SignUpPage() {
 
         <label style={{ fontSize: 12, color: "rgba(55,53,47,0.75)", display: "block", marginBottom: 6 }}>Email</label>
         <input
+          suppressHydrationWarning
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -65,6 +66,7 @@ export default function SignUpPage() {
 
         <label style={{ fontSize: 12, color: "rgba(55,53,47,0.75)", display: "block", marginBottom: 6 }}>Password</label>
         <input
+          suppressHydrationWarning
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -80,7 +82,7 @@ export default function SignUpPage() {
         <button
           type="submit"
           disabled={loading}
-          style={{ width: "100%", border: "none", background: "#37352f", color: "#fff", borderRadius: 8, padding: "10px 12px", fontSize: 14, fontWeight: 600, cursor: loading ? "not-allowed" : "pointer", opacity: loading ? 0.75 : 1 }}
+          style={{ width: "100%", border: "none", background: "#37352f", color: "#fff", borderRadius: 4, padding: "10px 12px", fontSize: 14, fontWeight: 600, cursor: loading ? "not-allowed" : "pointer", opacity: loading ? 0.75 : 1 }}
         >
           {loading ? "Creating..." : "Create account"}
         </button>
